@@ -9,7 +9,7 @@ pipeline {
   }
 
   environment {
-    SONAR_URL = "http://localhost:9000"
+    //SONAR_URL = "http://localhost:9000"
     GIT_REPO_NAME = "Jenkins-Zero-To-Hero"
     GIT_USER_NAME = "Neetgupta"
     DOCKER_IMAGE = "neetupgu/ultimate1-cicd:${BUILD_NUMBER}"
@@ -33,7 +33,7 @@ pipeline {
       }
     }
 
-    stage('Static Code Analysis') {
+    /*stage('Static Code Analysis') {
       steps {
         withCredentials([string(credentialsId: 'sonarqube', variable: 'SONAR_AUTH_TOKEN')]) {
           sh """
@@ -42,7 +42,7 @@ pipeline {
           """
         }
       }
-    }
+    }*/
 
     stage('Build and Push Docker Image') {
       steps {
