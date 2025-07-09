@@ -58,7 +58,7 @@ pipeline {
 
     stage('Update Deployment File') {
       steps {
-        withCredentials([string(credentialsId: 'github', variable: 'GITHUB_TOKEN')]) {
+        withCredentials([string(credentialsId: 'Github', variable: 'GITHUB_TOKEN')]) {
       sh """
             git clone https://${GITHUB_TOKEN}@github.com/Neetgupta/Jenkins-Zero-To-Hero.git
         cd Jenkins-Zero-To-Hero/java-maven-sonar-argocd-helm-k8s/spring-boot-app-manifests
